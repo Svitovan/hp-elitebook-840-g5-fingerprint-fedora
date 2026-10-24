@@ -9,6 +9,7 @@ section() {
 
 section "Operating system"
 if [[ -r /etc/os-release ]]; then
+  # shellcheck disable=SC1091 -- system-provided file, not part of this repository
   . /etc/os-release
   printf '%s\n' "${PRETTY_NAME:-Unknown Linux}"
 else
