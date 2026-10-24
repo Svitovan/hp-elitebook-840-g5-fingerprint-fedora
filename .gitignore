@@ -1,0 +1,29 @@
+# Diagnostic output
+diagnostics/
+*.log
+fingerprint-diagnostics.txt
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Packaging / build artifacts
+build/
+dist/
+*.egg-info/
+
+# Local upstream checkout
+.vendor/
+python-validity/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
