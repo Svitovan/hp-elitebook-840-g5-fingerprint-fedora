@@ -6,7 +6,8 @@ die() { printf 'ERROR: %s\n' "$*" >&2; exit 1; }
 
 [[ ${EUID:-$(id -u)} -ne 0 ]] || die "Run this script as your normal user, not with sudo."
 [[ -r /etc/os-release ]] || die "/etc/os-release not found."
-# shellcheck disable=SC1091 -- system-provided file, not part of this repository
+# System-provided file, not part of this repository.
+# shellcheck disable=SC1091
 . /etc/os-release
 [[ "${ID:-}" == "fedora" ]] || die "This rollback targets Fedora."
 
