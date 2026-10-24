@@ -12,6 +12,7 @@ die() { printf 'ERROR: %s\n' "$*" >&2; exit 1; }
 [[ ${EUID:-$(id -u)} -ne 0 ]] || die "Run this script as your normal user, not with sudo. It will request sudo when needed."
 
 [[ -r /etc/os-release ]] || die "/etc/os-release not found."
+# shellcheck disable=SC1091 -- system-provided file, not part of this repository
 . /etc/os-release
 [[ "${ID:-}" == "fedora" ]] || die "This installer targets Fedora. Detected: ${PRETTY_NAME:-unknown}."
 
